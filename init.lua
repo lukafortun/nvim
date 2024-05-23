@@ -9,3 +9,7 @@ vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
 
 vim.wo.number = true
 vim.o.cursorline = true
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  command = ":TSEnable highlight",
+})
