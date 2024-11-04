@@ -20,3 +20,8 @@ vim.o.tabstop = 4
 vim.o.softtabstop = 4
 
 vim.o.shiftwidth = 4
+
+vim.api.nvim_create_user_command("RunLatexmk", function()
+  local current_file = vim.fn.expand "%:p" -- Get just the filename
+  vim.fn.system("latexmk -pdf " .. current_file)
+end, {})
